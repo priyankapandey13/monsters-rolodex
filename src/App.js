@@ -32,19 +32,19 @@ class App extends Component {
   };
 
   render() {
-    // const { monsters, searchField } = this.state;
-    // const { ontextChange } = this.state;
+    const { monsters, searchField } = this.state;
+    const { ontextChange } = this;
 
-    const FilteredMonsters = this.state.monsters.filter((monster) => {
-      return monster.name.toLocaleLowerCase().includes(this.state.searchField);
+    const FilteredMonsters = monsters.filter((monster) => {
+      return monster.name.toLocaleLowerCase().includes(searchField);
     });
     
 
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Hello Priyanka search monsters :</h1>
-          <SearchBox onChangehandler={this.ontextChange} placeholder= 'Go Search Monsters' />
+          <h1 className="app-title">Monsters Rolodex</h1>
+          <SearchBox onChangehandler={ontextChange} placeholder= 'Go Search Monsters' />
           
           {/*{FilteredMonsters.map((items) => (
             <p key={items.id}>{items.name}</p>
